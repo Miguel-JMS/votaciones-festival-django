@@ -1,0 +1,20 @@
+{% extends "votaciones/base.html" %}
+{% block titulo %}Inicio{% endblock %}
+{% block contenido %}
+<h1 class="h2 mb-1">Ediciones del Festival</h1>
+<p class="text-muted">Elige una edición para ver sus categorías y votaciones.</p>
+<div class="row g-3">
+  {% for e in ediciones %}
+  <div class="col-md-6">
+    <div class="card h-100 tarjeta"><div class="card-body">
+      <h2 class="h5">{{ e.nombre }}</h2>
+      <p class="text-muted mb-2">{{ e.fecha_inicio|date:"j \d\e F" }} al {{ e.fecha_fin|date:"j \d\e F \d\e Y" }}</p>
+      <p class="small">{{ e.categorias.count }} categoría{{ e.categorias.count|pluralize }}</p>
+      <a class="btn btn-acento" href="{% url 'edicion' e.pk %}">Ver categorías</a>
+    </div></div>
+  </div>
+  {% empty %}
+  <p>Aún no hay ediciones registradas. Agrégalas desde el panel de administración.</p>
+  {% endfor %}
+</div>
+{% endblock %}

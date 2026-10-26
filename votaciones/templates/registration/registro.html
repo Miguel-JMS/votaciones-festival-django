@@ -1,0 +1,12 @@
+{% extends "votaciones/base.html" %}
+{% block titulo %}Registro{% endblock %}
+{% block contenido %}
+<div class="row justify-content-center"><div class="col-md-6">
+  <h1 class="h3">Crear cuenta</h1>
+  <form method="post" class="card tarjeta card-body">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-acento w-100" type="submit">Crear cuenta</button>
+    <p class="small mt-3 mb-0">¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
+  </form>
+</div></div>
+{% endblock %}

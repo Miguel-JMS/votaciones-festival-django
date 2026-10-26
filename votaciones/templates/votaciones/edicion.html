@@ -1,0 +1,13 @@
+{% extends "votaciones/base.html" %}
+{% block titulo %}{{ edicion.nombre }}{% endblock %}
+{% block contenido %}
+<nav class="small mb-2"><a href="{% url 'inicio' %}">Inicio</a> › {{ edicion.anio }}</nav>
+<h1 class="h2">{{ edicion.nombre }}</h1>
+<div class="list-group mt-3">
+  {% for c in categorias %}
+  <a class="list-group-item list-group-item-action" href="{% url 'categoria' c.pk %}">
+    <strong>{{ c.nombre }}</strong><br><span class="text-muted small">{{ c.descripcion }}</span>
+  </a>
+  {% empty %}<p>Esta edición todavía no tiene categorías.</p>{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+:root{--tinta:#1b2a41;--acento:#e0a100;--fondo:#f6f1e4}
+body{background:var(--fondo);color:var(--tinta)}
+.barra{background:var(--tinta);border-bottom:5px solid var(--acento)}
+.btn-acento{background:var(--acento);color:var(--tinta);font-weight:700;border:0}
+.btn-acento:hover{background:#c98f00;color:var(--tinta)}
+.tarjeta{border:1px solid #d9d0b8;border-radius:10px}
+.inicial{width:48px;height:48px;border-radius:8px;background:#e8dfc6;display:grid;place-items:center;font-weight:800;flex:none}
+form p{margin-bottom:.8rem}
+form input[type=text],form input[type=email],form input[type=password]{width:100%;padding:.5rem;border:1px solid #c9bf9f;border-radius:6px}
+.helptext,ul.errorlist{font-size:.8rem}
+ul.errorlist{color:#a63030;padding-left:1rem}

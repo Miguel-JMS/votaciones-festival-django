@@ -1,0 +1,12 @@
+{% extends "votaciones/base.html" %}
+{% block titulo %}Iniciar sesión{% endblock %}
+{% block contenido %}
+<div class="row justify-content-center"><div class="col-md-5">
+  <h1 class="h3">Iniciar sesión</h1>
+  <form method="post" class="card tarjeta card-body">{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-acento w-100" type="submit">Entrar</button>
+    <p class="small mt-3 mb-0">¿No tienes cuenta? <a href="{% url 'registro' %}">Regístrate</a></p>
+  </form>
+</div></div>
+{% endblock %}
